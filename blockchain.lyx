@@ -1,0 +1,892 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Le blockchain
+\end_layout
+
+\begin_layout Author
+Vincenzo Scotti M63/693
+\end_layout
+
+\begin_layout Institute
+Universita' degli Studi di Napoli Federico II
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Introduzione
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tecnologia emergente per l'implementazione di basi di dati distribuite
+\end_layout
+
+\begin_layout Itemize
+Particolarmente adatta a sistemi transazionali
+\end_layout
+
+\begin_layout Itemize
+Elevata affidabilita' essendo la base di dati replicata su ogni nodo
+\end_layout
+
+\begin_layout Itemize
+Robusta rispetto alla presenza di 
+\emph on
+nodi malevoli
+\emph default
+, fin tanto essi sono in minoranza
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Per questo motivo stanno nascendo le piu' svariate applicazioni
+\end_layout
+
+\begin_layout Itemize
+criptomonete (bitcoin, litecoin, ethereum, ...)
+\end_layout
+
+\begin_layout Itemize
+social network (steem, ...)
+\end_layout
+
+\begin_layout Itemize
+contratti
+\end_layout
+
+\begin_layout Itemize
+sistemi di gestione documentale
+\end_layout
+
+\begin_layout Itemize
+ed altro...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Struttura dei dati
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Struttura dati formata da una lista linkata di blocchi, immaginabili come
+ 
+\emph on
+transazioni
+\emph default
+ che alterano lo stato del sistema
+\end_layout
+
+\begin_layout Itemize
+Un blocco mantiene informazioni sulla transazione nel dominio di business,
+ oltre ad altri campi necessari a garantire la sicurezza del sistema
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Le blockchain come sistema distribuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+L'intera struttura dati e' replicata su ogni nodo => no single point of
+ failure
+\end_layout
+
+\begin_layout Itemize
+Le transazioni sono memorizzate in chiaro e verificate da ogni nodo della
+ rete
+\end_layout
+
+\begin_layout Itemize
+La blockchain principale e' quindi la catena di blocchi sulla quale la 
+\begin_inset Quotes eld
+\end_inset
+
+maggioranza
+\begin_inset Quotes erd
+\end_inset
+
+ dei nodi concorda
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Se pero' la blockchain e' di dominio pubblico, servono meccanismi per:
+\end_layout
+
+\begin_layout Itemize
+l'
+\emph on
+autenticazione
+\emph default
+ e l'
+\emph on
+autorizzazione
+\emph default
+ dei nodi
+\end_layout
+
+\begin_layout Itemize
+il controllo dell'
+\emph on
+integrita'
+\emph default
+ di tutta la catena (anche 500k+ blocchi)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Utilizzo degli hash crittografici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+I sistemi blockchain fanno uso di hash crittografici per:
+\end_layout
+
+\begin_layout Itemize
+generazione di un ID univoco per blocco
+\end_layout
+
+\begin_layout Itemize
+controllo d'integrita'
+\end_layout
+
+\begin_layout Itemize
+collegamento dei blocchi tra loro
+\end_layout
+
+\begin_layout Itemize
+realizzazione del 
+\emph on
+proof of work
+\emph default
+ (spiegato dopo)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Utilizzo della cifratura asimmetrica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Non c'e' un database delle credenziali (sarebbe SPOF)
+\end_layout
+
+\begin_layout Itemize
+I nodi sono identificati da una coppia di chiavi asimmetriche => ogni nodo
+ collegato alla rete puo' generare una coppia di chiavi e partecipare allo
+ scambio di messaggi
+\end_layout
+
+\begin_layout Itemize
+Le transazioni (solo i dati di business) sono firmati digitalmente dal nodo
+ autore
+\end_layout
+
+\begin_layout Standard
+Tutti i nodi della rete, nel validare il blocco, controlleranno se 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+il nodo N (identificato dalla coppia di chiavi X/Y) e' autorizzato ad emettere
+ la transazione T
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Struttura del blocco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hash del blocco
+\end_layout
+
+\begin_layout Itemize
+Chiave pubblica dell'autore
+\end_layout
+
+\begin_layout Itemize
+Informazioni di business
+\end_layout
+
+\begin_layout Itemize
+Firma dell'autore
+\end_layout
+
+\begin_layout Itemize
+Hash del blocco precedente
+\end_layout
+
+\begin_layout Itemize
+Proof of work (vedi dopo)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Scenari d'attacco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Chiamiamo 'M' un generico nodo malevolo
+\end_layout
+
+\begin_layout Itemize
+M prova a modificare/corrompere una transazione creata da A, ne ricalcola
+ l'hash e lo invia sulla rete
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Attenzione
+\series default
+! La firma non sarebbe piu' valida, quindi il blocco non sarebbe accettato
+ dai nodi buoni
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Le uniche transazioni modificabili da M sono quindi quelle che egli stesso
+ puo' rifirmare, ovvero quelli di cui e' autore
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Il 
+\begin_inset Quotes eld
+\end_inset
+
+double spending problem
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+M acquista online un oggetto da V
+\end_layout
+
+\begin_layout Itemize
+V aspetta un pagamento da M, per effettuare la spedizione
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename bc1.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+V trova il pagamento nella blockchain, e procede alla spedizione
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Il 
+\begin_inset Quotes eld
+\end_inset
+
+double spending problem
+\begin_inset Quotes erd
+\end_inset
+
+ (2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+M altera la propria transazione, e tutte le successive, in modo da reindirizzare
+ il pagamento ad un altro nodo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename bc2.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Il problema e' che nulla impedisce ad un nodo malevolo di modificare una
+ propria transazione passata, e aggiornare i puntatori dei successivi blocchi
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Il proof of work
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+La 
+\series bold
+vera
+\series default
+ novita' delle blockchain e' stata l'introduzione del proof of work
+\end_layout
+
+\begin_layout Itemize
+Il proof of work e' un lavoro computazionale da eseguire in fase di convalida
+ del blocco
+\end_layout
+
+\begin_layout Itemize
+Ha una natura probabilistica e complessita' media molto elevata
+\end_layout
+
+\begin_layout Itemize
+Ma deve essere facile verificarne l'esecuzione
+\end_layout
+
+\begin_layout Itemize
+I nodi in parallelo 
+\begin_inset Quotes eld
+\end_inset
+
+assolvono
+\begin_inset Quotes erd
+\end_inset
+
+ al proof of work (in un processo chiamato comunemente 
+\series bold
+mining
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+Di solito c'e' una ricompensa per chi lo completa prima, quindi il mining
+ diventa una vera e propria gara
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+POW e hash crittografici
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\emph on
+Trovare un nonce da aggiungere al blocco affinche' l'hash corrispondente
+ sia inferiore ad una soglia S
+\end_layout
+
+\begin_layout Itemize
+La complessita' e' elevata poiche' lo spazio dei campioni e' enorme
+\end_layout
+
+\begin_layout Itemize
+Se la funzione di hash e' accettabile, i campioni hanno tutti la stessa
+ probabilita' di essere quello 
+\begin_inset Quotes eld
+\end_inset
+
+giusto
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La durata dell'operazione e' quindi casuale, e con valore medio pari alla
+ meta' dei campioni da testare
+\end_layout
+
+\begin_layout Itemize
+D'altro canto, la verifica della correttezza del lavoro e' immediata: basta
+ calcolare l'hash del blocco (incluso il nonce) e controllare che esso soddisfi
+ la condizione richiesta
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+POW come soluzione al 
+\begin_inset Quotes eld
+\end_inset
+
+double spending problem
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Riprendiamo lo scenario precedente, supponendo che M voglia modificare una
+ sua vecchia transazione
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename bc1.eps
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Modificando T in T', l'hash andra' a cambiare, cosi' come per tutte le transazio
+ni seguenti
+\end_layout
+
+\begin_layout Itemize
+Vanno quindi ricalcolati tutti i POW dei blocchi a seguire
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+POW come soluzione al 
+\begin_inset Quotes eld
+\end_inset
+
+double spending problem
+\begin_inset Quotes erd
+\end_inset
+
+ (2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inoltre durante questo processo, nuovi blocchi potrebbero essere emessi
+ ed approvati dal resto della rete
+\end_layout
+
+\begin_layout Itemize
+Diventa quindi una 
+\series bold
+corsa
+\series default
+ tra il nodo M, che deve recuperare lo svantaggio, e il resto della rete
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Se la potenza computazionale del nodo M e' minore della potenza del resto
+ della rete, la probabilita' di riuscita decade esponenzialmente col numero
+ di blocchi da recuperare
+\end_layout
+
+\begin_layout Itemize
+Una transazione in una blockchain e' quindi considerata 
+\series bold
+sicura
+\series default
+ se viene superata da un numero sufficiente di blocchi
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bitcoin
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+E' la prima implementazione di moneta virtuale basata su blockchain
+\end_layout
+
+\begin_layout Itemize
+~500k blocchi (ad oggi)
+\end_layout
+
+\begin_layout Itemize
+SHA-256 come funzione di hashing
+\end_layout
+
+\begin_layout Itemize
+ECDSA per firmare le transazioni
+\end_layout
+
+\begin_layout Itemize
+Piu' transazioni per blocco
+\end_layout
+
+\begin_layout Itemize
+Nonce di 4 byte e soglia S adattativa in modo da mantenere costante la frequenza
+ di emissione dei blocchi (~10 minuti)
+\end_layout
+
+\begin_layout Itemize
+I miner devono quindi provare (tutte le combinazioni di nonce) X (tutte
+ le combinazioni di transazione per blocco), fino ad ottenere un hash valido
+\end_layout
+
+\begin_layout Itemize
+Una transazione e' considerata sicura se essa e' seguita da 6 blocchi
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+BCSim
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Simulatore di blockchain realizzato con tecnologie Java (Swing, JCA, ...)
+\end_layout
+
+\begin_layout Itemize
+Le transazioni sono dei messaggi pubblici (analogo ad un social network)
+\end_layout
+
+\begin_layout Itemize
+SHA-1 come funzione di hashing
+\end_layout
+
+\begin_layout Itemize
+SHA-1 + RSA per firmare le transazioni
+\end_layout
+
+\begin_layout Itemize
+Timeout casuale (in range configurabile) per simulare POW e ritardi della
+ rete di interconnessione
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
